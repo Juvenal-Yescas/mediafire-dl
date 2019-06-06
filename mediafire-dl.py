@@ -98,4 +98,4 @@ def download(url, output, quiet):
 
 if __name__ == "__main__":
     for url in sys.argv[1:]:
-        download(url,output=None,quiet=None)
+        download(url,output=None,quiet=False)
