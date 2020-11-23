@@ -15,7 +15,7 @@ CHUNK_SIZE = 512 * 1024  # 512KB
 
 def extractDownloadLink(contents):
     for line in contents.splitlines():
-        m = re.search(r'href="(http://download[^"]+)', line)
+        m = re.search(r'href="((http|https)://download[^"]+)', line)
         if m:
             return m.groups()[0]
 
