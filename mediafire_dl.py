@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+import argparse
 import os
 import os.path as osp
 import re
@@ -98,8 +99,14 @@ def download(url, output, quiet):
 
 
 def main():
-    for url in sys.argv[1:]:
+    desc = 'Simple command-line script to download files from mediafire'
+    parser = argparse.ArgumentParser(description=desc)
+    parser.add_argument('url', nargs='+')
+    args = parser.parse_args()
+
+    for url in args.url:
         download(url, output=None, quiet=False)
+
 
 if __name__ == "__main__":
     main()
