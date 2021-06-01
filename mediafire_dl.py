@@ -96,6 +96,10 @@ def download(url, output, quiet):
             pass
     return output
 
-if __name__ == "__main__":
+
+def main():
     for url in sys.argv[1:]:
-        download(url,output=None,quiet=False)
+        download(url, output=None, quiet=False)
+
+if __name__ == "__main__":
+    main()
