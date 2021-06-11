@@ -16,7 +16,7 @@ It is necessary to have **python3** and **pip3**
 ## Installation
 
 ```bash
-pip3 install -r requirements.txt
+pip3 install git+https://github.com/Juvenal-Yescas/mediafire-dl
 ```
 
 ## Usage
@@ -24,19 +24,19 @@ pip3 install -r requirements.txt
 ### From Command Line
 
 ```bash
-$ # python3 mediafire-dl.py mediafire_link_1 
+$ # mediafire-dl mediafire_link_1 
 
-$ # python3 mediafire-dl.py mediafire_link_1 mediafire_link_2 mediafire_link_3
+$ # mediafire-dl mediafire_link_1 mediafire_link_2 mediafire_link_3
 ```
 
 ### From Python
 
 ```python
-import mediafire-dl
+import mediafire_dl
 
 url = 'https://mediafire.com/xx/xx/file.zip'
 output = 'file.zip'
-mediafire-dl.download(url, output, quiet=False)
+mediafire_dl.download(url, output, quiet=False)
 ```
 ## Build with
 
