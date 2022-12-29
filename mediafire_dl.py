@@ -47,6 +47,7 @@ def download(url, output, quiet):
             'filename="(.*)"', res.headers['Content-Disposition']
         )
         output = m.groups()[0]
+        output = output.encode('iso8859').decode('utf-8')
         # output = osp.basename(url)
 
     output_is_path = isinstance(output, six.string_types)
