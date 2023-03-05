@@ -23,6 +23,9 @@ def extractDownloadLink(contents):
 def download(url, output, quiet):
     url_origin = url
     sess = requests.session()
+    sess.headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.178 Safari/537.36"
+    }
 
     while True:
         res = sess.get(url, stream=True)
