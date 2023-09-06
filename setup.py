@@ -19,6 +19,7 @@ setup(
     py_modules=['mediafire_dl'],
     install_requires=[
         "requests",
+        "six",
         "tqdm",
     ],
     entry_points={
