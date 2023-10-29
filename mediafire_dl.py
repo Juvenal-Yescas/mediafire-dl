@@ -20,7 +20,7 @@ def extractDownloadLink(contents):
         if m:
             return m.groups()[0]
 
-def download(url, output, quiet):
+def download(url, output=None, quiet=False):
     url_origin = url
     sess = requests.session()
     sess.headers = {
