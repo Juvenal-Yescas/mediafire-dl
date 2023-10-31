@@ -106,11 +106,14 @@ def main():
     desc = 'Simple command-line script to download files from mediafire'
     parser = argparse.ArgumentParser(description=desc)
     parser.add_argument('url', nargs='+')
+    parser.add_argument('-o', '--output', help='output filename')
     args = parser.parse_args()
 
-    for url in args.url:
-        download(url, output=None, quiet=False)
-
+    if len(args.url) == 1 and args.output:
+        download(args.url[0], args.output, quiet=False)
+    else:
+        for url in args.url:
+            download(url, output=None, quiet=False)
 
 if __name__ == "__main__":
     main()
